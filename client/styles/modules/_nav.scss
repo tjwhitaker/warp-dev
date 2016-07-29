@@ -1,0 +1,11 @@
+nav {
+    display:flex;
+}
+
+nav.left {
+    flex:1 0 auto;
+}
+
+nav.right {
+    flex:0 0 auto;
+}
