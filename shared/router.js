@@ -1,26 +1,44 @@
+/****************
+ * General Routes
+ ****************/
+
 FlowRouter.route('/', {
-    name: 'home.index',
+    name: 'landing.index',
     action: function() {
         BlazeLayout.render('index');
     }
 });
 
 FlowRouter.route('/login', {
-    name: 'home.login',
+    name: 'landing.login',
     action: function() {
         BlazeLayout.render('login');
     }
 });
 
 FlowRouter.route('/register', {
-    name: 'home.register',
+    name: 'landing.register',
     action: function() {
         BlazeLayout.render('register');
     }
 });
 
-FlowRouter.route('/analytics/overview', {
-    name: 'analytics.overview',
+/******************
+ * Analytics Routes
+ ******************/
+
+FlowRouter.route('/home', {
+    name: 'dashboard.home',
+    action: function() {
+        BlazeLayout.render('layout', {
+            menu: 'user-menu',
+            main: 'home'
+        });
+    }
+});
+
+FlowRouter.route('/:id/overview', {
+    name: 'dashboard.analytics.overview',
     action: function() {
         BlazeLayout.render('layout', {
             menu: 'analytics-menu',
@@ -29,8 +47,8 @@ FlowRouter.route('/analytics/overview', {
     }
 });
 
-FlowRouter.route('/analytics/schedule', {
-    name: 'analytics.schedule',
+FlowRouter.route('/:id/schedule', {
+    name: 'dashboard.analytics.schedule',
     action: function() {
         BlazeLayout.render('layout', {
             menu: 'analytics-menu',
@@ -39,8 +57,8 @@ FlowRouter.route('/analytics/schedule', {
     }
 });
 
-FlowRouter.route('/analytics/metrics', {
-    name: 'analytics.metrics',
+FlowRouter.route('/:id/metrics', {
+    name: 'dashboard.analytics.metrics',
     action: function() {
         BlazeLayout.render('layout', {
             menu: 'analytics-menu',
@@ -50,8 +68,8 @@ FlowRouter.route('/analytics/metrics', {
 
 });
 
-FlowRouter.route('/analytics/statistics', {
-    name: 'analytics.statistics',
+FlowRouter.route('/:id/statistics', {
+    name: 'dashboard.analytics.statistics',
     action: function() {
         BlazeLayout.render('layout', {
             menu: 'analytics-menu',
@@ -59,4 +77,19 @@ FlowRouter.route('/analytics/statistics', {
         });
     }
 
+});
+
+/*****************
+ * Settings Routes
+ *****************/
+
+
+FlowRouter.route('/settings', {
+    name: 'settings',
+    action: function() {
+        BlazeLayout.render('layout', {
+            menu: 'settings-menu',
+            main: 'settings'
+        });
+    }
 });

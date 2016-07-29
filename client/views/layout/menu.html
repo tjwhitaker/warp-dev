@@ -1,0 +1,127 @@
+<template name="user-menu">
+    <ul class="menu-items">
+        {{#each website in currentUser.websites}} 
+        <a href="/{{website.id}}/overview">
+            <li class="item">
+				<div class="item-info">
+                    <span class="title">{{website.url}}</span>
+					<span class="desc">Last Test: 10 hrs ago Status: Good</span>
+				</div>
+				<div class="item-select">
+					<i class="fa fa-angle-right"></i>
+				</div>
+			</li>
+		</a>
+        {{/each}}
+    </ul>
+</template>
+
+<template name="analytics-menu">
+    <ul class="menu-items">
+		<a href="overview">
+            <li class="item">
+				<div class="item-info">
+					<span class="title">Overview</span>
+					<span class="desc">Statistics and Analytics</span>
+				</div>
+				<div class="item-select {{isActiveRoute regex='overview$'}}">
+					<i class="fa fa-angle-right"></i>
+				</div>
+			</li>
+		</a>
+        <a href="schedule">
+            <li class="item">
+				<div class="item-info">
+					<span class="title">Schedule</span>
+					<span class="desc">Timing Information</span>
+				</div>
+				<div class="item-select {{isActiveRoute regex='schedule$'}}">
+					<i class="fa fa-angle-right"></i>
+				</div>
+			</li>
+		</a>
+		<a href="metrics">
+            <li class="item">
+				<div class="item-info">
+					<span class="title">Metrics</span>
+					<span class="desc">Performance Data</span>
+				</div>
+				<div class="item-select {{isActiveRoute regex='metrics$'}}">
+					<i class="fa fa-angle-right"></i>
+				</div>
+			</li>
+		</a>
+		<a href="statistics">
+            <li class="item">
+				<div class="item-info">
+					<span class="title">Statistics</span>
+					<span class="desc">Performance Analysis</span>
+				</div>
+				<div class="item-select {{isActiveRoute regex='statistics$'}}">
+					<i class="fa fa-angle-right"></i>
+				</div>
+			</li>
+		</a>
+	</ul>
+</template>
+
+<template name="settings-menu">
+    	<ul class="menu-items">
+		<a href="/settings/general">
+			<li class="item">
+				<div class="item-info">
+					<span class="title">General</span>
+					<span class="desc">Configuration</span>
+				</div>
+				<div class="item-select">
+					<i class="fa fa-angle-right"></i>
+				</div>
+			</li>
+		</a>
+		<a href="/settings/user">
+			<li class="item">
+				<div class="item-info">
+					<span class="title">User</span>
+					<span class="desc">Account Settings</span>
+				</div>
+				<div class="item-select ">
+					<i class="fa fa-angle-right"></i>
+				</div>
+			</li>
+		</a>
+		<a href="/settings/team">
+			<li class="item">
+				<div class="item-info">
+					<span class="title">Team</span>
+					<span class="desc">Manage and Invite Members</span>
+				</div>
+				<div class="item-select">
+					<i class="fa fa-angle-right"></i>
+				</div>
+			</li>
+		</a>
+		<a href="/settings/upgrade">
+			<li class="item">
+				<div class="item-info">
+					<span class="title">Upgrade</span>
+					<span class="desc">Pricing Plans</span>
+				</div>
+				<div class="item-select">
+					<i class="fa fa-angle-right"></i>
+				</div>
+			</li>
+		</a>
+		<a href="/settings/jobs">
+			<li class="item">
+				<div class="item-info">
+					<span class="title">Jobs</span>
+					<span class="desc">Manage Tests in the Queue</span>
+				</div>
+				<div class="item-select">
+					<i class="fa fa-angle-right"></i>
+				</div>
+			</li>
+		</a>
+	</ul>
+</template>
+
