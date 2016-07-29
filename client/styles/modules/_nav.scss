@@ -1,5 +1,10 @@
 nav {
     display:flex;
+    line-height:35px;
+}
+
+nav.left a {
+    margin:0 5px;
 }
 
 nav.left {
