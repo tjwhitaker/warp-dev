@@ -3,14 +3,34 @@ nav {
     line-height:35px;
 }
 
-nav.left a {
-    margin:0 5px;
-}
-
 nav.left {
     flex:1 0 auto;
+    padding:0 15px;
+    
+    a {
+        font-size:0.7rem;
+        letter-spacing:1px;
+        font-weight:bold;
+        color:white;
+        text-transform:uppercase;
+        margin-right:15px;
+    }
+
+    a:hover {
+        color:blue;
+    }
 }
 
 nav.right {
     flex:0 0 auto;
+    padding:0 5px;
+
+    a {
+        font-size:0.8rem;
+        color:black;
+    }
+
+    a:hover {
+        color:blue;
+    }
 }
