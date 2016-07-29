@@ -22,21 +22,30 @@ FlowRouter.route('/register', {
 FlowRouter.route('/analytics/overview', {
     name: 'analytics.overview',
     action: function() {
-        BlazeLayout.render('overview');
+        BlazeLayout.render('layout', {
+            menu: 'analytics-menu',
+            main: 'overview'
+        });
     }
 });
 
 FlowRouter.route('/analytics/schedule', {
     name: 'analytics.schedule',
     action: function() {
-        BlazeLayout.render('schedule');
+        BlazeLayout.render('layout', {
+            menu: 'analytics-menu',
+            main: 'schedule'
+        });
     }
 });
 
 FlowRouter.route('/analytics/metrics', {
     name: 'analytics.metrics',
     action: function() {
-        BlazeLayout.render('metrics');
+        BlazeLayout.render('layout', {
+            menu: 'analytics-menu',
+            main: 'metrics'
+        });
     }
 
 });
@@ -44,7 +53,10 @@ FlowRouter.route('/analytics/metrics', {
 FlowRouter.route('/analytics/statistics', {
     name: 'analytics.statistics',
     action: function() {
-        BlazeLayout.render('statistics');
+        BlazeLayout.render('layout', {
+            menu: 'analytics-menu',
+            main: 'statistics'
+        });
     }
 
 });
