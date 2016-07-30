@@ -1,0 +1,28 @@
+table {
+    max-width:100%;
+    width:100%;
+    font-size:10px;
+    border: 1px solid rgb(230,230,230);
+}
+
+table caption {
+    font-size:14px;
+}
+
+table tbody tr:nth-child(odd) {
+    background-color:rgb(245,245,245);
+}
+
+table tbody tr:nth-child(even) {
+    background-color:rgb(255,255,255);
+}
+table th {
+    font-weight:bold;
+}
+
+table th, 
+table td {
+    padding:5px;
+    text-align:center;
+    line-height:15px;
+}

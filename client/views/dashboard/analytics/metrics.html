@@ -1,12 +1,106 @@
 <template name="metrics">
     <div class="row">
         <div class="cell">
-            Timing Chart
+            {{> timingTable}} 
         </div>
     </div>
     <div class="row">
         <div class="cell">
-            Weight Chart
+            {{> weightTable}}
         </div>
     </div>
+</template>
+
+<template name="timingTable">
+	<table>
+		<caption>Timing (ms)</caption>
+		<thead>
+			<tr>
+				<th>First Byte</th>
+				<th>Last Byte</th>
+				<th>First CSS</th>
+				<th>First JS</th>
+				<th>First Image</th>
+				<th>DOM Interactive</th>
+				<th>DOM Loaded</th>
+				<th>DOM Complete</th>
+				<th>HTTP Complete</th>
+				<th>Backend (%)</th>
+				<th>Frontend (%)</th>
+				<th>Fastest Response</th>
+				<th>Slowest Response</th>
+				<th>Smallest Latency</th>
+				<th>Biggest Latency</th>
+				<th>Median Response</th>
+				<th>Median Latency</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each metrics}}
+				<tr>
+					<td>{{this.timeToFirstByte}}</td>
+					<td>{{this.timeToLastByte}}</td>
+					<td>{{this.timeToFirstCss}}</td>
+					<td>{{this.timeToFirstJs}}</td>
+					<td>{{this.timeToFirstImage}}</td>
+					<td>{{this.domInteractive}}</td>
+					<td>{{this.domContentLoaded}}</td>
+					<td>{{this.domComplete}}</td>
+					<td>{{this.httpTrafficCompleted}}</td>
+					<td>{{this.timeBackend}}</td>
+					<td>{{this.timeFrontend}}</td>
+					<td>{{this.fastestResponse}}</td>
+					<td>{{this.slowestResponse}}</td>
+					<td>{{this.smallestLatency}}</td>
+					<td>{{this.biggestLatency}}</td>
+					<td>{{this.medianResponse}}</td>
+					<td>{{this.medianLatency}}</td>
+				</tr>
+			{{/each}}
+		</tbody>
+	</table>
+</template>
+
+<template name="weightTable">
+	<table>
+		<caption>Weight (bytes)</caption>
+		<thead>
+			<tr>
+				<th>Requests (#)</th>
+				<th>Headers</th>
+				<th>Content</th>
+				<th>HTML</th>
+				<th>CSS</th>
+				<th>JS</th>
+				<th>JSON</th>
+				<th>Image</th>
+				<th>Webfont</th>
+				<th>Video</th>
+				<th>Base 64</th>
+				<th>Other</th>
+				<th>Smallest Response</th>
+				<th>Biggest Response</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each metrics}}
+				<tr>
+					<td>{{this.requests}}</td>
+					<td>{{this.headersSize}}</td>
+					<td>{{this.contentLength}}</td>
+					<td>{{this.htmlSize}}</td>
+					<td>{{this.cssSize}}</td>
+					<td>{{this.jsSize}}</td>
+					<td>{{this.jsonSize}}</td>
+					<td>{{this.imageSize}}</td>
+					<td>{{this.webfontSize}}</td>
+					<td>{{this.videoSize}}</td>
+					<td>{{this.base64Size}}</td>
+					<td>{{this.otherSize}}</td>
+					<td>{{this.smallestResponse}}</td>
+					<td>{{this.biggestResponse}}</td>
+				</tr>
+			{{/each}}
+		</tbody>
+	</table>
 </template>

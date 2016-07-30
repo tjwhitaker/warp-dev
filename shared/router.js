@@ -31,7 +31,7 @@ FlowRouter.route('/home', {
     name: 'dashboard.home',
     action: function() {
         BlazeLayout.render('layout', {
-            menu: 'userMenu',
+            menu: 'homeMenu',
             main: 'home'
         });
     }

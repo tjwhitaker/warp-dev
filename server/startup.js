@@ -3,6 +3,6 @@ Meteor.startup(function() {
     Jobs.remove({});
     Websites.remove({});
 
-    Websites.insert({url: 'http://warpdrive.io'});
-    Websites.insert({url: 'http://tim-whitaker.com'});
+    Websites.insert({url: 'http://warpdrive.io', metrics: []});
+    Websites.insert({url: 'http://tim-whitaker.com', metrics: []});
 });

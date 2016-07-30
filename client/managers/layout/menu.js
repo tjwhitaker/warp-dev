@@ -1,4 +1,4 @@
-Template.userMenu.helpers({
+Template.homeMenu.helpers({
     websites: function() {
         return Websites.find({});
     }
