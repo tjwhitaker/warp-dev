@@ -1,0 +1,38 @@
+<template name="jobs">
+	<div class="row">
+		<div class="cell">
+			<table>
+		        <thead>
+		          <tr>
+		            <th>User</th>
+		            <th>Type</th>
+		            <th>JobID</th>
+		            <th>Schedule</th>
+		            <th>Updated</th>
+		            <th>Priority</th>
+		            <th>Dependencies</th>
+		            <th>Attempts</th>
+		            <th>Repeats</th>
+		            <th>Status</th>
+		          </tr>
+		        </thead>
+		        <tbody>
+		        	{{#each jobs}}
+		        		<tr>
+							<td>{{strip 5 data.userId}}</td>
+							<td>{{type}}</td>
+							<td>{{strip 5 _id}}</td>
+							<td>{{runAt}}</td>
+							<td>{{lastUpdated}}</td>
+							<td>{{priority}}</td>
+							<td>{{depends.length}} / {{resolved.length}}</td>
+							<td>{{retried}} / {{numRetries retries}}</td>
+							<td>{{repeated}} / {{numRepeats repeats}}</td>
+							<td>{{status}}</td>
+						</tr>
+		        	{{/each}}
+		        </tbody>
+		    </table>
+	    </div>
+    </div>
+</template>

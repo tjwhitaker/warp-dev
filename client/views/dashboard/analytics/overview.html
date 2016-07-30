@@ -1,7 +1,13 @@
 <template name="overview">
-    <div class="row">
-        <div class="cell">
-            Overview 
+    {{#if hasData}}
+        <div class="row">
+            <div class="cell">
+                <h2>Overview</h2>
+                <div id="time-chart">
+                    <svg height="350px"></svg>
+                </div>
+            </div>
         </div>
-    </div>
+        {{loadTimeChart}}
+    {{/if}}
 </template>

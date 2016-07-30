@@ -1,14 +1,16 @@
 <template name="metrics">
-    <div class="row">
-        <div class="cell">
-            {{> timingTable}} 
+    {{#if hasData}}
+        <div class="row">
+            <div class="cell">
+                {{> timingTable}} 
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="cell">
-            {{> weightTable}}
+        <div class="row">
+            <div class="cell">
+                {{> weightTable}}
+            </div>
         </div>
-    </div>
+    {{/if}}
 </template>
 
 <template name="timingTable">

@@ -65,7 +65,16 @@ FlowRouter.route('/:id/metrics', {
             main: 'metrics'
         });
     }
+});
 
+FlowRouter.route('/:id/resources', {
+    name: 'dashboard.analytics.resources',
+    action: function() {
+        BlazeLayout.render('layout', {
+            menu: 'analyticsMenu',
+            main: 'resources'
+        });
+    }
 });
 
 FlowRouter.route('/:id/statistics', {
@@ -76,7 +85,6 @@ FlowRouter.route('/:id/statistics', {
             main: 'statistics'
         });
     }
-
 });
 
 /*****************
@@ -90,6 +98,16 @@ FlowRouter.route('/settings', {
         BlazeLayout.render('layout', {
             menu: 'settingsMenu',
             main: 'settings'
+        });
+    }
+});
+
+FlowRouter.route('/settings/jobs', {
+    name: 'settings.jobs',
+    action: function() {
+        BlazeLayout.render('layout', {
+            menu: 'settingsMenu',
+            main: 'jobs'
         });
     }
 });
