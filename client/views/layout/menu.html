@@ -1,7 +1,7 @@
-<template name="user-menu">
+<template name="userMenu">
     <ul class="menu-items">
-        {{#each website in currentUser.websites}} 
-        <a href="/{{website.id}}/overview">
+        {{#each website in websites}} 
+        <a href="/{{website._id}}/overview">
             <li class="item">
 				<div class="item-info">
                     <span class="title">{{website.url}}</span>
@@ -16,7 +16,7 @@
     </ul>
 </template>
 
-<template name="analytics-menu">
+<template name="analyticsMenu">
     <ul class="menu-items">
 		<a href="overview">
             <li class="item">
@@ -65,7 +65,7 @@
 	</ul>
 </template>
 
-<template name="settings-menu">
+<template name="settingsMenu">
     	<ul class="menu-items">
 		<a href="/settings/general">
 			<li class="item">

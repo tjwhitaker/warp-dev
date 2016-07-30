@@ -31,7 +31,7 @@ FlowRouter.route('/home', {
     name: 'dashboard.home',
     action: function() {
         BlazeLayout.render('layout', {
-            menu: 'user-menu',
+            menu: 'userMenu',
             main: 'home'
         });
     }
@@ -41,7 +41,7 @@ FlowRouter.route('/:id/overview', {
     name: 'dashboard.analytics.overview',
     action: function() {
         BlazeLayout.render('layout', {
-            menu: 'analytics-menu',
+            menu: 'analyticsMenu',
             main: 'overview'
         });
     }
@@ -51,7 +51,7 @@ FlowRouter.route('/:id/schedule', {
     name: 'dashboard.analytics.schedule',
     action: function() {
         BlazeLayout.render('layout', {
-            menu: 'analytics-menu',
+            menu: 'analyticsMenu',
             main: 'schedule'
         });
     }
@@ -61,7 +61,7 @@ FlowRouter.route('/:id/metrics', {
     name: 'dashboard.analytics.metrics',
     action: function() {
         BlazeLayout.render('layout', {
-            menu: 'analytics-menu',
+            menu: 'analyticsMenu',
             main: 'metrics'
         });
     }
@@ -72,7 +72,7 @@ FlowRouter.route('/:id/statistics', {
     name: 'dashboard.analytics.statistics',
     action: function() {
         BlazeLayout.render('layout', {
-            menu: 'analytics-menu',
+            menu: 'analyticsMenu',
             main: 'statistics'
         });
     }
@@ -88,7 +88,7 @@ FlowRouter.route('/settings', {
     name: 'settings',
     action: function() {
         BlazeLayout.render('layout', {
-            menu: 'settings-menu',
+            menu: 'settingsMenu',
             main: 'settings'
         });
     }

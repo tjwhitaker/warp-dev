@@ -9,3 +9,11 @@ Meteor.publish('userData', function () {
         this.ready();
     }
 });
+
+Meteor.publish('jobs', function() {
+    return Jobs.find();
+});
+
+Meteor.publish('websites', function() {
+    return Websites.find();
+});
