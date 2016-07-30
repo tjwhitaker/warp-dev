@@ -3,11 +3,17 @@ Template.schedule.events({
         var userId = Meteor.userId();
         var websiteId = FlowRouter.getParam('id');
         var settings = {
-            repeats: 1,
-            delay: 10
+            repeats: 10,
+            delay: 15 * 1000
         };
 
         Meteor.call('scheduleJob', userId, websiteId, settings);
+    },
+    'click #cancel-jobs-button': function() {
+        Meteor.call('cancelJobs');
+    },
+    'click #remove-jobs-button': function() {
+        Meteor.call('removeJobs');
     }
 });
 
