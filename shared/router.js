@@ -1,33 +1,53 @@
 /****************
- * General Routes
+ * Exposed Routes
  ****************/
 
-FlowRouter.route('/', {
+var exposed = FlowRouter.group({});
+
+exposed.route('/', {
     name: 'landing.index',
     action: function() {
         BlazeLayout.render('index');
     }
 });
 
-FlowRouter.route('/login', {
+exposed.route('/login', {
     name: 'landing.login',
     action: function() {
         BlazeLayout.render('login');
     }
 });
 
-FlowRouter.route('/register', {
+exposed.route('/logout', {
+    name:'landing.logout',
+    action: function() {
+        Meteor.logout();
+        FlowRouter.redirect('/');
+    }
+});
+
+exposed.route('/register', {
     name: 'landing.register',
     action: function() {
         BlazeLayout.render('register');
     }
 });
 
-/******************
- * Analytics Routes
- ******************/
+/*******************
+ * Classified Routes
+ *******************/
 
-FlowRouter.route('/home', {
+var classified = FlowRouter.group({
+    name: 'classified',
+    triggersEnter: [function(context, redirect) {
+        if (!Meteor.loggingIn() && !Meteor.userId()) {
+            redirect('/login');
+        }
+
+    }]
+});
+
+classified.route('/home', {
     name: 'dashboard.home',
     action: function() {
         BlazeLayout.render('layout', {
@@ -37,7 +57,7 @@ FlowRouter.route('/home', {
     }
 });
 
-FlowRouter.route('/:id/overview', {
+classified.route('/:id/overview', {
     name: 'dashboard.analytics.overview',
     action: function() {
         BlazeLayout.render('layout', {
@@ -47,7 +67,7 @@ FlowRouter.route('/:id/overview', {
     }
 });
 
-FlowRouter.route('/:id/schedule', {
+classified.route('/:id/schedule', {
     name: 'dashboard.analytics.schedule',
     action: function() {
         BlazeLayout.render('layout', {
@@ -57,7 +77,7 @@ FlowRouter.route('/:id/schedule', {
     }
 });
 
-FlowRouter.route('/:id/metrics', {
+classified.route('/:id/metrics', {
     name: 'dashboard.analytics.metrics',
     action: function() {
         BlazeLayout.render('layout', {
@@ -67,7 +87,7 @@ FlowRouter.route('/:id/metrics', {
     }
 });
 
-FlowRouter.route('/:id/resources', {
+classified.route('/:id/resources', {
     name: 'dashboard.analytics.resources',
     action: function() {
         BlazeLayout.render('layout', {
@@ -77,7 +97,7 @@ FlowRouter.route('/:id/resources', {
     }
 });
 
-FlowRouter.route('/:id/statistics', {
+classified.route('/:id/statistics', {
     name: 'dashboard.analytics.statistics',
     action: function() {
         BlazeLayout.render('layout', {
@@ -87,12 +107,7 @@ FlowRouter.route('/:id/statistics', {
     }
 });
 
-/*****************
- * Settings Routes
- *****************/
-
-
-FlowRouter.route('/settings', {
+classified.route('/settings', {
     name: 'settings',
     action: function() {
         BlazeLayout.render('layout', {
@@ -102,7 +117,7 @@ FlowRouter.route('/settings', {
     }
 });
 
-FlowRouter.route('/settings/jobs', {
+classified.route('/settings/jobs', {
     name: 'settings.jobs',
     action: function() {
         BlazeLayout.render('layout', {
@@ -111,3 +126,9 @@ FlowRouter.route('/settings/jobs', {
         });
     }
 });
+
+/*******************
+ * Admin Routes
+ *******************/
+
+var admin = FlowRouter.group({});
