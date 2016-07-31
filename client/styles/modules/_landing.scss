@@ -1,8 +1,11 @@
+@import "../partials/colors";
+
 #landing {
     header {
         width:100%;
         background:none;
         position:absolute;
+        display:flex;
     }
 
     .gradient-bg-1 {
@@ -22,9 +25,6 @@
 
 
     #logo {
-        position:absolute;
-        top:5px;
-        left:5px;
         color:white;
         margin:0;
         z-index:10;
@@ -34,13 +34,11 @@
         letter-spacing:1px;
         font-weight:bold;
         padding: 0 5px;
+        flex:0 0 auto;
     }
 
     nav
     {
-        position:absolute;
-        top:5px;
-        right:5px;
         color:white;
         margin:0;
         z-index:10;
@@ -48,13 +46,53 @@
         font-size:.75rem;
         line-height:2rem;
         letter-spacing:1px;
-        text-transform:uppercase;
+        flex:1 0 auto;
     }
 
     nav a {
-        margin:0 5px;
         color:white;
-        font-weight:bold;
+        text-decoration:none;
+        margin:0 10px 0 auto;
+    }
+
+    nav a:hover {
+        color:$linkBlue;
+    }
+
+    #login-popup {
+        display:none;
+        background:white;
+        color:black;
+        position:absolute;
+        top:2rem;
+        right:5px;
+        padding:10px;
+    }
+    
+    #login-popup a {
+        color:$linkBlue;
+    }
+
+    .at-title {
+        display:none;
+    }
+
+    .at-form label, .at-form input {
+        display:block;
+        line-height:12px;
+    }
+
+    .at-form label {
+        padding-bottom:5px;
+    }
+    
+    .at-form input {
+        width:100%;
+        height:1rem;
+    }
+
+    .at-input {
+        padding:5px 0;
     }
 
     #hero {
@@ -137,6 +175,7 @@
         border:3px solid white;
         text-transform:uppercase;
         letter-spacing:1px;
+        font-size:1rem;
         cursor:pointer;
         flex:1 1 auto;
         position:relative

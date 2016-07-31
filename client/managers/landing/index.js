@@ -49,6 +49,10 @@ Template.index.onRendered(function() {
                 });
             }
         });
+});
 
-
+Template.index.events({
+    'click #login-button': function() {
+        $('#login-popup').toggle();
+    }
 });

@@ -11,25 +11,17 @@ exposed.route('/', {
     }
 });
 
-exposed.route('/login', {
-    name: 'landing.login',
+exposed.route('/denied', {
+    name: 'landing.denied',
     action: function() {
-        BlazeLayout.render('login');
+        BlazeLayout.render('denied');
     }
 });
 
-exposed.route('/logout', {
-    name:'landing.logout',
+exposed.route('/404', {
+    name: 'landing.404',
     action: function() {
-        Meteor.logout();
-        FlowRouter.redirect('/');
-    }
-});
-
-exposed.route('/register', {
-    name: 'landing.register',
-    action: function() {
-        BlazeLayout.render('register');
+        BlazeLayout.render('404');
     }
 });
 
@@ -41,7 +33,7 @@ var classified = FlowRouter.group({
     name: 'classified',
     triggersEnter: [function(context, redirect) {
         if (!Meteor.loggingIn() && !Meteor.userId()) {
-            redirect('/login');
+            redirect('/denied');
         }
 
     }]
@@ -117,12 +109,12 @@ classified.route('/settings', {
     }
 });
 
-classified.route('/settings/jobs', {
-    name: 'settings.jobs',
+classified.route('/help', {
+    name: 'help',
     action: function() {
         BlazeLayout.render('layout', {
-            menu: 'settingsMenu',
-            main: 'jobs'
+            menu: 'helpMenu',
+            main: 'help'
         });
     }
 });
@@ -132,3 +124,54 @@ classified.route('/settings/jobs', {
  *******************/
 
 var admin = FlowRouter.group({});
+
+admin.route('/admin', {
+    name: 'admin',
+    action: function() {
+        BlazeLayout.render('layout', {
+            menu: 'adminMenu',
+            main: 'admin'
+        });
+    }
+
+});
+
+admin.route('/admin/billing', {
+    name: 'admin.billing',
+    action: function() {
+        BlazeLayout.render('layout', {
+            menu: 'adminMenu',
+            main: 'billing'
+        });
+    }
+});
+
+admin.route('/admin/users', {
+    name: 'admin.users',
+    action: function() {
+        BlazeLayout.render('layout', {
+            menu: 'adminMenu',
+            main: 'users'
+        });
+    }
+});
+
+admin.route('/admin/websites', {
+    name: 'admin.websites',
+    action: function() {
+        BlazeLayout.render('layout', {
+            menu: 'adminMenu',
+            main: 'websites'
+        });
+    }
+});
+
+admin.route('/admin/jobs', {
+    name: 'admin.jobs',
+    action: function() {
+        BlazeLayout.render('layout', {
+            menu: 'adminMenu',
+            main: 'jobs'
+        });
+    }
+});
