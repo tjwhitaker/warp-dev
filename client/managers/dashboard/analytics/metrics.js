@@ -7,14 +7,14 @@ Template.metrics.helpers({
 });
 
 Template.timingTable.helpers({
-	'metrics': function() {
+	'tests': function() {
 	    var websiteId = FlowRouter.getParam('id');
-        return Websites.findOne(websiteId).data.metrics;
+        return Websites.findOne(websiteId).data;
     }
 });
 Template.weightTable.helpers({
-	'metrics': function() {
+	'tests': function() {
 		var websiteId = FlowRouter.getParam('id');
-        return Websites.findOne(websiteId).data.metrics;
+        return Websites.findOne(websiteId).data;
 	}
 });

@@ -38,25 +38,25 @@
 			</tr>
 		</thead>
 		<tbody>
-			{{#each metrics}}
+			{{#each tests}}
 				<tr>
-					<td>{{this.timeToFirstByte}}</td>
-					<td>{{this.timeToLastByte}}</td>
-					<td>{{this.timeToFirstCss}}</td>
-					<td>{{this.timeToFirstJs}}</td>
-					<td>{{this.timeToFirstImage}}</td>
-					<td>{{this.domInteractive}}</td>
-					<td>{{this.domContentLoaded}}</td>
-					<td>{{this.domComplete}}</td>
-					<td>{{this.httpTrafficCompleted}}</td>
-					<td>{{this.timeBackend}}</td>
-					<td>{{this.timeFrontend}}</td>
-					<td>{{this.fastestResponse}}</td>
-					<td>{{this.slowestResponse}}</td>
-					<td>{{this.smallestLatency}}</td>
-					<td>{{this.biggestLatency}}</td>
-					<td>{{this.medianResponse}}</td>
-					<td>{{this.medianLatency}}</td>
+					<td>{{this.metrics.timeToFirstByte}}</td>
+					<td>{{this.metrics.timeToLastByte}}</td>
+					<td>{{this.metrics.timeToFirstCss}}</td>
+					<td>{{this.metrics.timeToFirstJs}}</td>
+					<td>{{this.metrics.timeToFirstImage}}</td>
+					<td>{{this.metrics.domInteractive}}</td>
+					<td>{{this.metrics.domContentLoaded}}</td>
+					<td>{{this.metrics.domComplete}}</td>
+					<td>{{this.metrics.httpTrafficCompleted}}</td>
+					<td>{{this.metrics.timeBackend}}</td>
+					<td>{{this.metrics.timeFrontend}}</td>
+					<td>{{this.metrics.fastestResponse}}</td>
+					<td>{{this.metrics.slowestResponse}}</td>
+					<td>{{this.metrics.smallestLatency}}</td>
+					<td>{{this.metrics.biggestLatency}}</td>
+					<td>{{this.metrics.medianResponse}}</td>
+					<td>{{this.metrics.medianLatency}}</td>
 				</tr>
 			{{/each}}
 		</tbody>
@@ -85,22 +85,22 @@
 			</tr>
 		</thead>
 		<tbody>
-			{{#each metrics}}
+			{{#each tests}}
 				<tr>
-					<td>{{this.requests}}</td>
-					<td>{{this.headersSize}}</td>
-					<td>{{this.contentLength}}</td>
-					<td>{{this.htmlSize}}</td>
-					<td>{{this.cssSize}}</td>
-					<td>{{this.jsSize}}</td>
-					<td>{{this.jsonSize}}</td>
-					<td>{{this.imageSize}}</td>
-					<td>{{this.webfontSize}}</td>
-					<td>{{this.videoSize}}</td>
-					<td>{{this.base64Size}}</td>
-					<td>{{this.otherSize}}</td>
-					<td>{{this.smallestResponse}}</td>
-					<td>{{this.biggestResponse}}</td>
+					<td>{{this.metrics.requests}}</td>
+					<td>{{this.metrics.headersSize}}</td>
+					<td>{{this.metrics.contentLength}}</td>
+					<td>{{this.metrics.htmlSize}}</td>
+					<td>{{this.metrics.cssSize}}</td>
+					<td>{{this.metrics.jsSize}}</td>
+					<td>{{this.metrics.jsonSize}}</td>
+					<td>{{this.metrics.imageSize}}</td>
+					<td>{{this.metrics.webfontSize}}</td>
+					<td>{{this.metrics.videoSize}}</td>
+					<td>{{this.metrics.base64Size}}</td>
+					<td>{{this.metrics.otherSize}}</td>
+					<td>{{this.metrics.smallestResponse}}</td>
+					<td>{{this.metrics.biggestResponse}}</td>
 				</tr>
 			{{/each}}
 		</tbody>

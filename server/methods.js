@@ -14,8 +14,7 @@ Meteor.methods({
 			var task = phantomas(url, function(err, json, results) {
 				var metrics = results.getMetrics();
                 var offenders = results.getAllOffenders();
-                var data = {metrics: metrics, offenders: offenders};
-				data.time = new Date();
+                var data = {metrics: metrics, offenders: offenders, time: new Date()};
 				done(err, data);
 			});
 

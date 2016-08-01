@@ -13,12 +13,12 @@ Template.overview.helpers({
         var websiteId = FlowRouter.getParam('id');
         var website = Websites.findOne(websiteId);
 
-		var frontendTime = website.data.metrics.map(function(obj, index) {
-			return {x: obj.time, y: obj.httpTrafficCompleted*obj.timeFrontend/100};
+		var frontendTime = website.data.map(function(obj, index) {
+			return {x: obj.time, y: obj.metrics.httpTrafficCompleted*obj.metrics.timeFrontend/100};
 		});
 
-		var backendTime = website.data.metrics.map(function(obj, index) {
-			return {x: obj.time, y: obj.httpTrafficCompleted*obj.timeBackend/100};
+		var backendTime = website.data.map(function(obj, index) {
+			return {x: obj.time, y: obj.metrics.httpTrafficCompleted*obj.metrics.timeBackend/100};
 		});
 
 		chart.xAxis.tickFormat(function(d) { return d3.time.format('%X')(new Date(d)); })
