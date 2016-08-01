@@ -3,8 +3,8 @@ Template.schedule.events({
         var userId = Meteor.userId();
         var websiteId = FlowRouter.getParam('id');
         var settings = {
-            repeats: 10,
-            delay: 15 * 1000
+            repeats: 5,
+            delay: 0
         };
 
         Meteor.call('scheduleJob', userId, websiteId, settings);

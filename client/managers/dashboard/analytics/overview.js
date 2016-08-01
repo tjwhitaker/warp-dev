@@ -2,7 +2,7 @@ Template.overview.helpers({
     'hasData': function() {
         var websiteId = FlowRouter.getParam('id');
         var website = Websites.findOne(websiteId);
-        return websiteId && website && (website.metrics.length > 0) 
+        return websiteId && website && (website.data.length > 0) 
     },
 	'loadTimeChart': function() {
 		var chart = nv.models.lineChart()
@@ -13,11 +13,11 @@ Template.overview.helpers({
         var websiteId = FlowRouter.getParam('id');
         var website = Websites.findOne(websiteId);
 
-		var frontendTime = website.metrics.map(function(obj, index) {
+		var frontendTime = website.data.metrics.map(function(obj, index) {
 			return {x: obj.time, y: obj.httpTrafficCompleted*obj.timeFrontend/100};
 		});
 
-		var backendTime = website.metrics.map(function(obj, index) {
+		var backendTime = website.data.metrics.map(function(obj, index) {
 			return {x: obj.time, y: obj.httpTrafficCompleted*obj.timeBackend/100};
 		});
 

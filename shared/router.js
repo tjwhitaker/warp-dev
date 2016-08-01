@@ -88,6 +88,16 @@ classified.route('/:id/metrics', {
     }
 });
 
+classified.route('/:id/offenders', {
+    name: 'dashboard.analytics.offenders',
+    action: function() {
+        BlazeLayout.render('layout', {
+            menu: 'analyticsMenu',
+            main: 'offenders'
+        });
+    }
+});
+
 classified.route('/:id/resources', {
     name: 'dashboard.analytics.resources',
     action: function() {

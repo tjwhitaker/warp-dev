@@ -10,11 +10,13 @@ Meteor.methods({
         console.log('Website: ' + websiteId);
         console.log('url: ' + url);
 
-		var metrics = Async.runSync(function (done) {
+		var data = Async.runSync(function (done) {
 			var task = phantomas(url, function(err, json, results) {
 				var metrics = results.getMetrics();
-				metrics.time = new Date();
-				done(err, metrics);
+                var offenders = results.getAllOffenders();
+                var data = {metrics: metrics, offenders: offenders};
+				data.time = new Date();
+				done(err, data);
 			});
 
 			task.on('progress', function(progress) {
@@ -33,7 +35,7 @@ Meteor.methods({
 			});
 		});
 
-		Websites.update({_id: websiteId}, {$push: {metrics: metrics.result}});
+		Websites.update({_id: websiteId}, {$push: {data: data.result}});
 		console.log('Updated website: %s', websiteId);
 	}
 });
