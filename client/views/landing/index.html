@@ -1,12 +1,16 @@
 <template name="index">
-    <div id="landing">
+<div id="landing">
     <header>
         <a id="logo" href="/">WARPDRIVE.IO</a>
         <nav>
-            <a href="#" id="login-button">Log In</a>
-            <div id="login-popup">
-                {{> atForm}}
-            </div>
+            {{#if currentUser}}
+                <a href="/home">DASHBOARD</a>
+            {{else}}
+                <a href="#" id="login-button">LOG IN</a>
+                <div id="login-popup">
+                    {{> atForm}}
+                </div>
+            {{/if}}
         </nav>
     </header>
 
@@ -15,12 +19,15 @@
             <div id="particles"></div>
             <div id="hero-image"></div>
             <div id="hero-content">
-                <h1 id="hero-title">Performance Analytics and Monitoring</h1>
-                <p id="hero-description">For SAAS Companies</p>
+                <img class="hero-content-image" src="/hero.png">
+                <!--
+                <h1 id="hero-title">Real Time Performance Analytics</h1>
+                <p id="hero-description"></p>
                 <div id="hero-buttons">
                     <button class="gradient-bg-1">Request Demo</button>                    
                     <button class="gradient-bg-2">Watch a Video</button>
                 </div>
+                -->
             </div>
         </div>
 
@@ -50,6 +57,81 @@
             <img src="/mockup.jpg" style="visibility:hidden;width:100%;max-height:80vh;">
             <div class="play-button"></div> 
         </div>
+
+        <div id="pricing">
+            <div class="wrapper">
+                    <div class="price-box">
+                        <span class="fa-stack">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-paper-plane fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h1 class="title">Basic</h1>
+                        <span class="price">$10</span>
+                        <span class="price-desc">/month</span>
+                        <ul class="feature-list">
+                            <li>10 Tests</li>
+                            <li>More Items</li>
+                            <li>Another Thing</li>
+                            <li>One More</li>
+                            <li>Done</li>
+                        </ul>
+                        <button type="button">Purchase</button>
+                </div>
+                    <div class="price-box">
+                        <span class="fa-stack">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-plane fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h1 class="title">Advanced</h1>
+                        <span class="price">$50</span>
+                        <span class="price-desc">/month</span>
+                        <ul class="feature-list">
+                            <li>50 Tests</li>
+                            <li>More Items</li>
+                            <li>Another Thing</li>
+                            <li>One More</li>
+                            <li>Done</li>
+                        </ul>
+                        <button type="button">Purchase</button>
+                    </div>
+                    <div class="price-box">
+                        <span class="fa-stack">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-rocket fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h1 class="title">Premium</h1>
+                        <span class="price">$250</span>
+                        <span class="price-desc">/month</span>
+                        <ul class="feature-list">
+                            <li>Unlimited Tests</li>
+                            <li>More Items</li>
+                            <li>Another Thing</li>
+                            <li>One More</li>
+                            <li>Done</li>
+                        </ul>
+                        <button type="button">Purchase</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="contact">
+            <h1>Contact Us</h1>
+            <form>
+                <fieldset>
+                    <label>Your Name</label>
+                    <input type="text" name="name">
+                </fieldset>
+                <fieldset>
+                    <label>Your Email</label>
+                    <input type="email" name="email">
+                </fieldset>
+                <fieldset>
+                    <label>Message</label>
+                    <textarea name="message" rows="8"></textarea>
+                </fieldset>
+            </form>
+        </div>
+
     </div>
 </div>
 </template>

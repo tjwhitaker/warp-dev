@@ -26,8 +26,12 @@ nav.right {
     padding:0 10px;
 
     a {
-        color:black;
-        font-size:0.75rem;
+        font-size:11px;
+        letter-spacing:1px;
+        font-weight:bold;
+        color:white;
+        text-transform:uppercase;
+        margin-left:15px;
     }
 
     a:hover {

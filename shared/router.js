@@ -25,6 +25,15 @@ exposed.route('/404', {
     }
 });
 
+FlowRouter.route('/logout', {
+  name: 'logout',
+  action() {
+    Accounts.logout();
+    FlowRouter.go('/');
+  }
+});
+
+
 /*******************
  * Classified Routes
  *******************/
@@ -109,16 +118,6 @@ classified.route('/settings', {
     }
 });
 
-classified.route('/help', {
-    name: 'help',
-    action: function() {
-        BlazeLayout.render('layout', {
-            menu: 'helpMenu',
-            main: 'help'
-        });
-    }
-});
-
 /*******************
  * Admin Routes
  *******************/
@@ -133,7 +132,6 @@ admin.route('/admin', {
             main: 'admin'
         });
     }
-
 });
 
 admin.route('/admin/billing', {

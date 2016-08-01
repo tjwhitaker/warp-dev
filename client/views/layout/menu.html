@@ -78,13 +78,13 @@
 
 <template name="settingsMenu">
 	<ul class="menu-items">
-		<a href="/settings/general">
+		<a href="/settings">
 			<li class="item">
 				<div class="item-info">
 					<span class="title">General</span>
 					<span class="desc">Configuration</span>
 				</div>
-				<div class="item-select">
+				<div class="item-select {{isActiveRoute regex='settings$'}}">
 					<i class="fa fa-angle-right"></i>
 				</div>
 			</li>
@@ -95,7 +95,7 @@
 					<span class="title">User</span>
 					<span class="desc">Account Settings</span>
 				</div>
-				<div class="item-select ">
+				<div class="item-select {{isActiveRoute regex='user$'}}">
 					<i class="fa fa-angle-right"></i>
 				</div>
 			</li>
@@ -106,7 +106,7 @@
 					<span class="title">Team</span>
 					<span class="desc">Manage and Invite Members</span>
 				</div>
-				<div class="item-select">
+				<div class="item-select {{isActiveRoute regex='team$'}}">
 					<i class="fa fa-angle-right"></i>
 				</div>
 			</li>
@@ -117,7 +117,7 @@
 					<span class="title">Upgrade</span>
 					<span class="desc">Pricing Plans</span>
 				</div>
-				<div class="item-select">
+				<div class="item-select {{isActiveRoute regex='upgrade$'}}">
 					<i class="fa fa-angle-right"></i>
 				</div>
 			</li>
@@ -127,13 +127,24 @@
 
 <template name="adminMenu">
     <ul class="menu-items">
+        <a href="/admin">
+			<li class="item">
+				<div class="item-info">
+					<span class="title">General</span>
+					<span class="desc">Configuration</span>
+				</div>
+				<div class="item-select {{isActiveRoute regex='admin$'}}">
+					<i class="fa fa-angle-right"></i>
+				</div>
+			</li>
+		</a>
 		<a href="/admin/billing">
 			<li class="item">
 				<div class="item-info">
 					<span class="title">Billing</span>
 					<span class="desc">Configuration</span>
 				</div>
-				<div class="item-select">
+				<div class="item-select {{isActiveRoute regex='billing$'}}">
 					<i class="fa fa-angle-right"></i>
 				</div>
 			</li>
@@ -144,7 +155,7 @@
 					<span class="title">Users</span>
 					<span class="desc">Account Settings</span>
 				</div>
-				<div class="item-select ">
+				<div class="item-select {{isActiveRoute regex='users$'}}">
 					<i class="fa fa-angle-right"></i>
 				</div>
 			</li>
@@ -155,7 +166,7 @@
 					<span class="title">Websites</span>
 					<span class="desc">Manage and Invite Members</span>
 				</div>
-				<div class="item-select">
+				<div class="item-select {{isActiveRoute regex='websites$'}}">
 					<i class="fa fa-angle-right"></i>
 				</div>
 			</li>
@@ -166,7 +177,7 @@
 					<span class="title">Jobs</span>
 					<span class="desc">Manage Tests in the Queue</span>
 				</div>
-				<div class="item-select">
+				<div class="item-select {{isActiveRoute regex='jobs$'}}">
 					<i class="fa fa-angle-right"></i>
 				</div>
 			</li>
