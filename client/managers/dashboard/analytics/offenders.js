@@ -6,7 +6,16 @@ Template.offenders.helpers({
     },
 	'offenders': function() {
 	    var websiteId = FlowRouter.getParam('id');
-        console.log(Websites.findOne(websiteId).data);
-        return;
+        var data = Websites.findOne(websiteId).data.slice(-1)[0].offenders;
+        var offenders = [];
+
+        for (var key in data) {
+            offenders.push({key: key, data:data[key]});
+        }
+
+        console.log(offenders);
+
+
+        return offenders;
     }
 });

@@ -1,5 +1,18 @@
 <template name="offenders">
     {{#if hasData}}
-        {{offenders}}
+        {{#each offenders}}
+        <div class="row">
+            <div class="cell">
+                <h1>{{this.key}}</h1>
+                <ul>
+                {{#each this.data}}
+                <li>{{this}}</li>
+                {{/each}}
+                </ul>
+            </div>
+        </div>
+        {{/each}}
+    {{else}}
+        {{> nodata}}
     {{/if}}
 </template>
