@@ -1,0 +1,20 @@
+button {
+    cursor:pointer;
+    font-size:11px;
+    font-style:normal;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    padding:10px;
+    border:none;
+    border-radius:3px;
+    background:black;
+    color:rgba(255,255,255,0.7);
+    transition: color ease .3s;
+    transition: background ease .3s;
+    margin:5px 0;
+}
+button:hover 
+{
+    color:rgba(255,255,255,1);
+}
+

@@ -1,18 +1,29 @@
 <template name="homeMenu">
     <ul class="menu-items">
         {{#each website in websites}} 
-        <a href="/{{website._id}}/overview">
+            <a href="/{{website._id}}/overview">
+                <li class="item">
+                    <div class="item-info">
+                        <span class="title">{{website.url}}</span>
+                        <span class="desc">Last Test: 10 hrs ago</span>
+                    </div>
+                    <div class="item-select">
+                        <i class="fa fa-angle-right"></i>
+                    </div>
+                </li>
+            </a>
+        {{/each}}
+        <a href="/new">
             <li class="item">
 				<div class="item-info">
-                    <span class="title">{{website.url}}</span>
-					<span class="desc">Last Test: 10 hrs ago</span>
+                    <span class="title">Add Website</span>
+					<span class="desc">X Websites Available</span>
 				</div>
 				<div class="item-select">
-					<i class="fa fa-angle-right"></i>
+                    <i class="fa fa-angle-right {{isActiveRoute regex='new$'}}"></i>
 				</div>
 			</li>
 		</a>
-        {{/each}}
     </ul>
 </template>
 
@@ -21,7 +32,7 @@
 		<a href="overview">
             <li class="item">
 				<div class="item-info">
-					<span class="title">Overview</span>
+                    <span class="title">{{website.url}}</span>
 					<span class="desc">General Information</span>
 				</div>
 				<div class="item-select {{isActiveRoute regex='overview$'}}">
@@ -29,6 +40,17 @@
 				</div>
 			</li>
 		</a>
+        <a href="flow">
+            <li class="item">
+                <div class="item-info">
+					<span class="title">Flow</span>
+					<span class="desc">Test Interaction</span>
+				</div>
+				<div class="item-select {{isActiveRoute regex='flow$'}}">
+					<i class="fa fa-angle-right"></i>
+				</div>
+            </li>
+        </a>
 		<a href="metrics">
             <li class="item">
 				<div class="item-info">

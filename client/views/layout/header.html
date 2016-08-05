@@ -5,7 +5,9 @@
             <a href="/settings">Settings</a>
 		</nav>
         <nav class="right">
-            <a href="/admin">Admin</a>
+            {{#if isAdmin}}
+                <a href="/admin">Admin</a>
+            {{/if}}
             <a href="/logout">Log Out</a>
 		</nav>
 	</header>

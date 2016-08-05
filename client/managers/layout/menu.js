@@ -3,3 +3,9 @@ Template.homeMenu.helpers({
         return Websites.find({});
     }
 });
+
+Template.analyticsMenu.helpers({
+    website: function() {
+        return Websites.findOne(FlowRouter.getParam('id'));
+    }
+});

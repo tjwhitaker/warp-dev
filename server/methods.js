@@ -36,5 +36,8 @@ Meteor.methods({
 
 		Websites.update({_id: websiteId}, {$push: {data: data.result}});
 		console.log('Updated website: %s', websiteId);
-	}
+	},
+    'sendEmail': function() {
+        //var email = mailChimp.call
+    }
 });

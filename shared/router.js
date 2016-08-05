@@ -44,7 +44,6 @@ var classified = FlowRouter.group({
         if (!Meteor.loggingIn() && !Meteor.userId()) {
             redirect('/denied');
         }
-
     }]
 });
 
@@ -54,6 +53,16 @@ classified.route('/home', {
         BlazeLayout.render('layout', {
             menu: 'homeMenu',
             main: 'home'
+        });
+    }
+});
+
+classified.route('/new', {
+    name: 'dashboard.new',
+    action: function() {
+        BlazeLayout.render('layout', {
+            menu: 'homeMenu',
+            main: 'new'
         });
     }
 });
@@ -74,6 +83,16 @@ classified.route('/:id/schedule', {
         BlazeLayout.render('layout', {
             menu: 'analyticsMenu',
             main: 'schedule'
+        });
+    }
+});
+
+classified.route('/:id/flow', {
+    name: 'dashboard.analytics.flow',
+    action: function() {
+        BlazeLayout.render('layout', {
+            menu: 'analyticsMenu',
+            main: 'flow'
         });
     }
 });
@@ -132,7 +151,13 @@ classified.route('/settings', {
  * Admin Routes
  *******************/
 
-var admin = FlowRouter.group({});
+var admin = FlowRouter.group({
+    triggersEnter: [function(context, redirect) {
+        if (!Roles.userIsInRole(Meteor.user(), ['admin'])) {
+            redirect('/denied');
+        }
+    }]
+});
 
 admin.route('/admin', {
     name: 'admin',
