@@ -54,5 +54,13 @@ Template.index.onRendered(function() {
 Template.index.events({
     'click #login-button': function() {
         $('#login-popup').toggle();
+    },
+    'click #send-mail': function(e) {
+        e.preventDefault();
+        var name = $('#contact-name').val();
+        var email = $('#contact-email').val();
+        var message = $('#contact-message').val();
+
+        Meteor.call('sendMail', name, email, message);
     }
 });

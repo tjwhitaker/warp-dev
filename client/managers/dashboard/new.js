@@ -1,5 +1,6 @@
 Template.new.events({
     'click #new-website': function() {
-        console.log('new');
+        var url = $('#url').val();
+        Meteor.call('newWebsite', Meteor.userId(), url); 
     }
 });

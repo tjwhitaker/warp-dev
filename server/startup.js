@@ -10,5 +10,5 @@ Meteor.startup(function() {
 
     Roles.addUsersToRoles(demo, ['admin']);
 
-    Websites.insert({url: 'http://warpdrive.io', data: []});
+    Websites.insert({userId: demo, url: 'http://warpdrive.io', data: []});
 });

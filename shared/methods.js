@@ -1,4 +1,11 @@
 Meteor.methods({
+    'newWebsite': function(userId, url) {
+        Websites.insert({
+            userId: userId,
+            url: url,
+            data: []
+        });
+    },
 	'scheduleJob': function(userId, websiteId, settings) {
 		var job = new Job(Jobs, 'warptest', {userId: userId, websiteId: websiteId});
 

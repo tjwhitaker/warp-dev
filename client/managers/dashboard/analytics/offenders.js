@@ -10,7 +10,12 @@ Template.offenders.helpers({
         var offenders = [];
 
         for (var key in data) {
-            offenders.push({key: key, data:data[key]});
+            if (key != 'cssCount'   && 
+                key != 'jsCount'    && 
+                key != 'imageCount' &&
+                key != 'webfontCount')
+                
+                offenders.push({key: key, data:data[key]});
         }
 
         console.log(offenders);

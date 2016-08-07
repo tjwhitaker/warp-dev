@@ -37,7 +37,13 @@ Meteor.methods({
 		Websites.update({_id: websiteId}, {$push: {data: data.result}});
 		console.log('Updated website: %s', websiteId);
 	},
-    'sendEmail': function() {
-        //var email = mailChimp.call
-    }
+    'sendMail': function(name, email, message) {
+        this.unblock();
+        Meteor.Mailgun.send({
+            to: 'tim@warpdrive.io',
+            from: name,
+            subject: email + ' Warpdrive Contact Form',
+            text: message
+        });
+    } 
 });
